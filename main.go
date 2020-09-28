@@ -1,14 +1,20 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"https://github.com/jxu86/kubeengine/core/kubeclient"
+
+	"github.com/jonluo94/baasmanager/baas-core/common/log"
+	"github.com/jxu86/kubeengine/core/kubeclient"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
+
+var logger = log.GetLogger("main", log.INFO)
 
 func main() {
 	// service.Server()
 	fmt.Println("kube start")
-	kc := kubeclient.NewClients("./kubeconfig.yaml")
+	kc := kubeclient.NewClients("./config/kubeconfig.yaml")
 
 	ns, err := kc.KubeClient.CoreV1().Nodes().List(context.TODO(), metav1.ListOptions{})
 	if err != nil {
