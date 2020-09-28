@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/jonluo94/baasmanager/baas-core/common/log"
+	"github.com/jxu86/kubeengine/core/common/log"
 	"github.com/jxu86/kubeengine/core/kubeclient"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
